@@ -1,0 +1,7 @@
+Убивалка процесса на порту
+
+//макось
+lsof -n -i:8080 | grep LISTEN | awk '{print $2}' | xargs kill -9
+
+//ubuntu
+lsof -t -i tcp:80 -s tcp:listen | xargs kill -9
